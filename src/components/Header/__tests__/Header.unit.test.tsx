@@ -1,4 +1,4 @@
-import { render } from 'src/util/test-utils'
+import { render } from 'util/test-utils'
 
 import { Header } from '../Header'
 

@@ -1,4 +1,4 @@
-import { render } from 'src/util/test-utils'
+import { render } from 'util/test-utils'
 
 import { Footer, AUTHOR } from '../Footer'
 

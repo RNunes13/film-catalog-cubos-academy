@@ -1,4 +1,4 @@
-import { render } from 'src/util/test-utils'
+import { render } from 'util/test-utils'
 
 import { Tag, ITag } from '../Tag'
 
@@ -8,7 +8,7 @@ const defaultProps: ITag = {
 
 const setupComponent = (props?: Partial<ITag>) => render(<Tag {...defaultProps} {...props} />)
 
-describe('Header', () => {
+describe('Tag', () => {
   describe('renders as expected', () => {
     it('renders the `Tag`', () => {
       const { getByTestId } = setupComponent()
