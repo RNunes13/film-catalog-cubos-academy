@@ -17,6 +17,11 @@ describe('Layout', () => {
       expect(getByTestId('page')).toBeInTheDocument()
     })
 
+    it('renders the `Header`', () => {
+      const { getByTestId } = setupComponent()
+      expect(getByTestId('header')).toBeInTheDocument()
+    })
+
     it('renders the `Main`', () => {
       const { getByTestId } = setupComponent()
       expect(getByTestId('page-main')).toBeInTheDocument()

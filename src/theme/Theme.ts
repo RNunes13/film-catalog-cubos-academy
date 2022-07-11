@@ -69,7 +69,7 @@ const theme: IThemeProps = {
     secondary: '#ff007b',
 
     base_100: '#000000',
-    base_80: '#2b2b31',
+    base_80: '#2c2c2c',
     base_60: '#858585',
     base_40: '#b3b3b3',
     base_20: '#ebebeb',

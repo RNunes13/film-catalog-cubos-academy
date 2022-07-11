@@ -13,6 +13,7 @@ const Layout = ({ children, pageTitle = 'Movies' }: ILayout) => (
     <Head>
       <title>{ pageTitle }</title>
     </Head>
+    <Styled.Header />
     <Styled.Main data-testid='page-main'>
       {children}
     </Styled.Main>
