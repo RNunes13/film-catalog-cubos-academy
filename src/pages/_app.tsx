@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { createContext } from 'react'
 import { ThemeProvider } from 'styled-components'
+import { appWithTranslation } from 'next-i18next'
 
 import type { AppProps } from 'next/app'
 import type { NextPage } from 'next'
@@ -43,4 +44,4 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   )
 }
 
-export default MyApp
+export default appWithTranslation(MyApp)
