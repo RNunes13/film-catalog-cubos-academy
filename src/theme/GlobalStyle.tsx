@@ -37,6 +37,10 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 16px;
     color: ${theme.colors.primary};
     text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   button {

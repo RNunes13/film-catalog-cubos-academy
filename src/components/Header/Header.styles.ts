@@ -12,7 +12,6 @@ export const Header = styled.header`
   height: 100%;
   max-height: ${HEADER_HEIGHT_DESKTOP}px;
   background-color: ${({ theme }) => theme.colors.base_80};
-  border-bottom: 2px solid;
   box-shadow: 0 -10px 25px ${({ theme }) => theme.colors.base_100};
   z-index: ${({ theme }) => theme.index.top + 1};
 

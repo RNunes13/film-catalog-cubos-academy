@@ -17,6 +17,7 @@ const Layout = ({ children, pageTitle = 'Movies' }: ILayout) => (
     <Styled.Main data-testid='page-main'>
       {children}
     </Styled.Main>
+    <Styled.Footer />
   </Styled.Layout>
 )
 

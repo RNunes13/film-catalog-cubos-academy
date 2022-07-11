@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { mixins } from 'theme'
 
 import HeaderComp from 'components/Header/Header'
+import FooterComp from 'components/Footer/Footer'
 
 import { HEADER_HEIGHT_DESKTOP, HEADER_HEIGHT_MOBILE } from 'components/Header/Header.styles'
 
@@ -12,6 +13,7 @@ export const Layout = styled.div`
 `
 
 export const Header = styled(HeaderComp)``
+export const Footer = styled(FooterComp)``
 
 export const Main = styled.main`
   ${mixins.defaultGrid()}
