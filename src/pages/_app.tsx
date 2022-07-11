@@ -8,6 +8,7 @@ import type { ReactElement, ReactNode } from 'react'
 
 import { theme } from 'theme'
 import { GlobalStyle } from 'theme/GlobalStyle'
+import Layout from 'components/Layout/Layout'
 
 interface IAppContext {
 }
@@ -26,7 +27,7 @@ type AppPropsWithLayout = AppProps & {
 }
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  const getLayout = Component.getLayout ?? ((page) => page)
+  const getLayout = Component.getLayout ?? ((page) => <Layout>{ page }</Layout>)
 
   return (
     <>
