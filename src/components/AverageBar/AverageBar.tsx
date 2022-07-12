@@ -11,6 +11,7 @@ export interface IAverageBar {
 
 export const AverageBar: React.FC<IAverageBar> = ({
   value = 0,
+  className,
   color = COLORS.primary,
 }) => {
   const [ cx, cy, r ] = Array(3).fill(20) as number[]
@@ -18,7 +19,7 @@ export const AverageBar: React.FC<IAverageBar> = ({
   const percent = value * 10
 
   return (
-    <Styled.AverageBar data-testid='averageBar'>
+    <Styled.AverageBar className={className} data-testid='averageBar'>
       <Styled.Wrapper>
         <Styled.Svg>
           <Styled.Circle

@@ -1,3 +1,4 @@
 {
-  "title": "Catálogo de filmes"
+  "title": "Catálogo de filmes",
+  "releaseDate": "<strong>Lançamento:</strong> {{date}}"
 }

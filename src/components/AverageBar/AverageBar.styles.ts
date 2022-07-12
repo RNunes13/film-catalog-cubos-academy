@@ -45,7 +45,7 @@ export const Percent = styled.div`
 `
 
 export const Number = styled.p`
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
 
   &::after {

@@ -1,3 +1,4 @@
 {
-  "title": "Movie catalog"
+  "title": "Movie catalog",
+  "releaseDate": "<strong>Release:</strong> {{date}}"
 }

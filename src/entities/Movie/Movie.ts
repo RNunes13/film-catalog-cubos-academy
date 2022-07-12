@@ -2,8 +2,10 @@ import { Genre, Genres } from "../Genres/Genres";
 import { IGenre } from "../Genres/Genres.interface";
 import { IMovie } from "./Movie.interface"
 
+export type { IMovie } from './Movie.interface';
+
 export class Movies {
-  movies: Movie[];
+  movies: IMovie[];
 
   constructor(movieList: IMovie[] = [], genres: IGenre[] = []) {
     const movies = this.#createMovies(movieList, genres)

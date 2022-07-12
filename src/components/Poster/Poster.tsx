@@ -21,6 +21,8 @@ export interface IPoster {
   posterSize?: POSTER_SIZES;
 }
 
+const PLACEHOLDER = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mN8/R8AAtsB7JKxzdUAAAAASUVORK5CYII='
+
 export const Poster: React.FC<IPoster> = ({
   title,
   path,
@@ -38,8 +40,12 @@ export const Poster: React.FC<IPoster> = ({
         src={image}
         width={width}
         height={height}
+        placeholder='blur'
+        blurDataURL={PLACEHOLDER}
         data-testid='poster-image'
       />
     </PosterStyled>
  )
 }
+
+export default Poster

@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { createContext } from 'react'
+import { createContext, useState, useEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { appWithTranslation } from 'next-i18next'
 
@@ -8,27 +8,45 @@ import type { NextPage } from 'next'
 import type { ReactElement, ReactNode } from 'react'
 
 import { theme } from 'theme'
+import { Genre } from 'entities/Genres/Genres'
 import { GlobalStyle } from 'theme/GlobalStyle'
 import Layout from 'components/Layout/Layout'
 
 interface IAppContext {
+  genres: Genre[],
+  setGenres?: (genres: any[]) => void
 }
 
 const initState: IAppContext = {
+  genres: [],
 }
 
 export const AppCtx = createContext<IAppContext>(initState)
 
-export type NextPageWithLayout = NextPage & {
+export type NextPageWithLayout<T> = NextPage<T> & {
   getLayout?: (page: ReactElement) => ReactNode
 }
 
-type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout
+type AppPropsWithLayout<P = {}> = AppProps & {
+  Component: NextPageWithLayout<P>
 }
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => <Layout>{ page }</Layout>)
+
+  const [state, setState] = useState<IAppContext>(initState)
+
+  const setGenres = (genres: any[]) => setState(prevState => ({ ...prevState, genres }))
+
+  useEffect(() => {
+    const { withGenres = '', query = '' } = pageProps
+
+    setState(prevState => ({
+      ...prevState,
+      appliedSearchTitle: query, 
+      appliedGenres: withGenres.split(',').filter(Boolean).map(Number)
+    }))
+  }, [pageProps])
 
   return (
     <>
@@ -38,7 +56,9 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
       </Head>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        { getLayout(<Component {...pageProps} />) }
+        <AppCtx.Provider value={{ ...state, setGenres }}>
+          { getLayout(<Component {...pageProps} />) }
+        </AppCtx.Provider>
       </ThemeProvider>
     </>
   )
