@@ -1,20 +1,18 @@
 import React from 'react'
 import { useTranslation, Trans } from 'next-i18next'
 
-import { IMovie } from 'entities/Movie/Movie.interface'
+import { Movie } from 'entities/Movie/Movie'
 
 import * as Styled from './DesktopContent.styles'
 
 interface IDesktopContent {
-  movie: IMovie
+  movie: Movie
 }
 
 export const DesktopContent: React.FC<IDesktopContent> = ({ movie }) => {
   const { t } = useTranslation('home')
-  const { title, releaseDate, voteAverage = 0, overview, genres  } = movie
+  const { title, voteAverage = 0, overview, genres, formattedReleaseDate } = movie
 
-  const date = new Date(`${releaseDate}T00:00:00.00`).toLocaleDateString('pt-BR')
-  
   return (
     <Styled.Content>
       <Styled.Header>
@@ -28,7 +26,7 @@ export const DesktopContent: React.FC<IDesktopContent> = ({ movie }) => {
         <Trans
           t={t}
           i18nKey='releaseDate'
-          values={{ date }}
+          values={{ date: formattedReleaseDate }}
         />
       </Styled.ReleaseDate>
       {!!genres?.length && (

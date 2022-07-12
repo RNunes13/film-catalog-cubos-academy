@@ -1,0 +1,18 @@
+{
+  "synopsis": "Synopsis",
+  "information": "Information",
+  "situation": "Situation",
+  "language": "Language",
+  "duration": "Duration",
+  "budget": "Budget",
+  "revenue": "Revenue",
+  "profit": "Profit",
+  "status": {
+    "rumored": "Rumored",
+    "planned": "Planned",
+    "inProduction": "In production",
+    "postProduction": "Post production",
+    "released": "Released",
+    "canceled": "Canceled"
+  }
+}

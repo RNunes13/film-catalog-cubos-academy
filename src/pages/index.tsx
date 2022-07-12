@@ -26,7 +26,7 @@ export interface IHomeProps {
 
 const client = initializeApollo()
 
-const Home: NextPageWithLayout<IHomeProps> = ({ movieData , localPage}) => {
+const Home: NextPageWithLayout<IHomeProps> = ({ movieData , localPage }) => {
   const [getGenres, { loading }] = useLazyQuery(GET_GENRES)
 
   const { t } = useTranslation('home')

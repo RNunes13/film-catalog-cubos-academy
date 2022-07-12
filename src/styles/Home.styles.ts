@@ -5,12 +5,6 @@ import MovieCardComp from 'components/MovieCard/MovieCard'
 import PaginationComp from 'components/Pagination/Pagination'
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  height: 100%;
 `
 
 export const Movies = styled.div`
@@ -22,6 +16,7 @@ export const Movies = styled.div`
     grid-row-gap: ${({ theme }) => theme.spaces.space4};
   }
 `
+
 export const MovieCard = styled(MovieCardComp)`
 `
 

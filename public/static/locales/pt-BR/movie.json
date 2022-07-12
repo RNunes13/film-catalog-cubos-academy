@@ -1,0 +1,18 @@
+{
+  "synopsis": "Sinopse",
+  "information": "Informações",
+  "situation": "Situação",
+  "language": "Idioma",
+  "duration": "Duração",
+  "budget": "Orçamento",
+  "revenue": "Receita",
+  "profit": "Lucro",
+  "status": {
+    "rumored": "Rumor",
+    "planned": "Planejado",
+    "inProduction": "Em produção",
+    "postProduction": "Pós produção",
+    "released": "Lançado",
+    "canceled": "Cancelado"
+  }
+}

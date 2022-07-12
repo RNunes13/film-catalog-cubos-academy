@@ -42,6 +42,7 @@ export interface IMovie {
   tagline?: string | null;
   title?: string;
   video?: boolean;
+  videos?: { results: any[] };
   voteAverage?: number;
   voteCount?: number;
 }

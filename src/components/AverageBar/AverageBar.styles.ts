@@ -25,7 +25,7 @@ export const Circle = styled.circle<{
   height: 100%;
   fill: transparent;
   stroke-width: 8px;
-  stroke: ${({ theme }) => theme.colors.base_20};
+  stroke: transparent;
   transform: translate(10px, 10px);
   stroke-linecap: round;
 

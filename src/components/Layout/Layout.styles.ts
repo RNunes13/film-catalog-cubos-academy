@@ -15,8 +15,8 @@ export const Layout = styled.div`
 export const Header = styled(HeaderComp)``
 export const Footer = styled(FooterComp)``
 
-export const Main = styled.main`
-  ${mixins.defaultGrid()}
+export const Main = styled.main<{ grid: 'grid940' | 'grid1290' | 'defaultGrid' }>`
+  ${({ grid }) => mixins[grid]()}
   flex: 1 0 auto;
   margin-top: ${HEADER_HEIGHT_DESKTOP}px;
   padding-top: ${({ theme }) => theme.spaces.space2};
