@@ -46,8 +46,6 @@ const customFetch = throttledFetch(async (uri: RequestInfo, options: RequestInit
   const params = resolveSearchParams(uri)
   const url = `${uri.toString().split('?')[0]}?${params}`
 
-  console.log('url', url)
-
   const res = await fetch(url, options)
   
   if (res.status >= 300) {
