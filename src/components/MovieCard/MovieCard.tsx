@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { IMovie } from 'entities/Movie/Movie.interface'
+import { Movie } from 'entities/Movie/Movie'
 
 import * as Styled from './MovieCard.styles'
 
 
 export interface IMovieCard {
-  movie: IMovie;
+  movie: Movie;
 }
 
 export const MovieCard: React.FC<IMovieCard> = ({ movie }) => {

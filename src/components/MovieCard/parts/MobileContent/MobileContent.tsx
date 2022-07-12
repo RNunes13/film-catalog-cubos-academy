@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { IMovie } from 'entities/Movie/Movie.interface'
+import { Movie } from 'entities/Movie/Movie'
 
 import * as Styled from './MobileContent.styles'
 
 interface IMobileContent {
-  movie: IMovie
+  movie: Movie
 }
 
 export const MobileContent: React.FC<IMobileContent> = ({ movie }) => {

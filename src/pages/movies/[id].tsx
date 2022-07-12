@@ -79,6 +79,11 @@ const Movie: NextPageWithLayout<IMovieProps> = ({ movie: movieProps }) => {
             )}
           </Styled.Genres>
         </Styled.Content>
+
+        <Styled.Poster
+          title={title as string}
+          path={posterPath as string}
+        />
       </Styled.ContentWrap>
 
       {!!trailer && (
