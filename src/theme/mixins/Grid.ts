@@ -33,5 +33,5 @@ export const grid12 = () => (props: IMixinProps): string => `
 `
 
 export const defaultGrid = () => (props: IMixinProps): string => `
-  ${grid1290()(props)}
+  ${grid940()(props)}
 `
