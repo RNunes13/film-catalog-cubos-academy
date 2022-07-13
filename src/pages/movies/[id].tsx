@@ -60,7 +60,6 @@ const Movie: NextPageWithLayout<IMovieProps> = ({ movie: movieProps }) => {
           <Styled.Subtitle>{ t('synopsis') }</Styled.Subtitle>
           <Styled.Overview>{ overview }</Styled.Overview>
 
-
           <Styled.Subtitle>{ t('information') }</Styled.Subtitle>
           <Styled.Information>
             <Styled.Infos>

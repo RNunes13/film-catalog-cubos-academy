@@ -35,11 +35,13 @@ export const Container = styled.div`
   }
 `
 
-export const Title = styled.h1`
+export const Title = styled.a`
   ${mixins.h0()}
   color: ${({ theme }) => theme.colors.base_0};
   font-weight: 400;
   text-align: center;
+  
+  &: hover { text-decoration: none; }
   
   ${mixins.isMobile()} {
     ${mixins.h1()}

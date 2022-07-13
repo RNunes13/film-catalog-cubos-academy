@@ -14,6 +14,14 @@ const BoxShadow = `
   box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.1);
 `
 
+const ContentBackground = `
+  background: linear-gradient(
+    120deg,
+    rgb(44, 44, 44) 2%,
+    rgba(44, 44, 44, 0.8) 100%
+  );
+`
+
 export const Movie = styled.div`
   margin: ${({ theme }) => theme.spaces.space4} 0;
 
@@ -25,18 +33,38 @@ export const Movie = styled.div`
 export const ContentWrap = styled.div`
   display: flex;
   column-gap: ${({ theme }) => theme.spaces.space4};
+  border-radius: ${({ theme }) => theme.spaces.space2};
+
+  ${mixins.large()} {
+    column-gap: ${({ theme }) => theme.spaces.space2};
+  }
+
+  ${mixins.medium()} {
+    ${ContentBackground}
+    flex-direction: column;
+  }
 `
 
 export const Content = styled.div`
-  ${BoxShadow}
+  display: flex;
+  flex-direction: column;
   padding: 50px 50px 30px 50px;
   border-radius: ${({ theme }) => theme.spaces.space2};
   color: ${({ theme }) => theme.colors.base_0};
-  background: linear-gradient(
-    120deg,
-    ${({ theme }) => theme.colors.base_80} 2%,
-    rgba(44, 44, 44, 0.8) 100%
-  );
+
+  ${mixins.medium()} {
+    order: 1;
+    padding: 10px 40px 30px 40px;
+  }
+
+  ${mixins.isMobile()} {
+    padding: ${({ theme: { spaces: { space1, space3 }}}) => `${space1} ${space3} ${space3}`};
+  }
+
+  ${mixins.isDesktop()} {
+    ${BoxShadow}
+    ${ContentBackground}
+  }
 `
 
 export const Header = styled.div`
@@ -50,6 +78,10 @@ export const Title = styled.h1`
   font-weight: 700;
   font-size: 40px;
   line-height: 45px;
+
+  ${mixins.isMobile()} {
+    font-size: 30px;
+  }
 `
 
 export const AverageBar = styled(AverageBarComp)`
@@ -57,6 +89,9 @@ export const AverageBar = styled(AverageBarComp)`
 `
 
 export const Subtitle = styled(SubtitleComp)`
+  ${mixins.isMobile()} {
+    font-size: 20px;
+  }
 `
 
 export const Overview = styled.p`
@@ -68,6 +103,7 @@ export const Overview = styled.p`
 export const Information = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin-top: ${({ theme }) => theme.spaces.space1};
 
   ${mixins.medium()} {
     flex-flow: column wrap;
@@ -76,10 +112,14 @@ export const Information = styled.div`
 
 export const Infos = styled.ul`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   grid-gap: ${({ theme }) => theme.spaces.space2};
   width: 100%;
   margin-bottom: ${({ theme }) => theme.spaces.space3};
+
+  ${mixins.large()} {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
 `
 
 export const InfoItem = styled.li`
@@ -98,6 +138,10 @@ export const InfoText = styled.span`
   font-size: 20px;
   line-height: 26px;
   font-weight: 600;
+
+  ${mixins.large()} {
+    font-size: 16px;
+  }
 `
 
 export const Genres = styled.div`
@@ -105,7 +149,7 @@ export const Genres = styled.div`
   align-items: flex-start;
   flex-wrap: wrap;
   flex: 1 0 auto;
-  column-gap: ${({ theme }) => theme.spaces.space1};
+  gap: ${({ theme }) => theme.spaces.space1};
   margin-top: ${({ theme }) => theme.spaces.space1};
 `
 
@@ -119,12 +163,18 @@ export const Poster = styled(PosterComp).attrs({
   width: IMAGE_WIDTH
 })`
   ${BoxShadow}
-  max-height: ${IMAGE_HEIGHT}px;
-  border-radius: ${({ theme }) => theme.spaces.space2};
-  overflow: hidden;
+
+  img {
+    border-radius: ${({ theme }) => theme.spaces.space2};
+    overflow: hidden;
+  }
 
   ${mixins.medium()} {
-    display: none;
+    img {
+      object-position: center top;
+      max-height: ${IMAGE_HEIGHT}px;
+      width: 100%;
+    }
   }
 `
 
@@ -133,6 +183,10 @@ export const VideoWrap = styled.div`
   margin-top: ${({ theme }) => theme.spaces.space4};
   border-radius: ${({ theme }) => theme.spaces.space2};
   overflow: hidden;
+
+  ${mixins.medium()} {
+    margin-top: ${({ theme }) => theme.spaces.space2};
+  }
 `
 
 export const YouTube = styled(YouTubeComp)`

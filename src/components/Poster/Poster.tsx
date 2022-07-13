@@ -15,8 +15,8 @@ export enum POSTER_SIZES {
 export interface IPoster {
   title: string;
   path: string;
-  width?: number;
-  height?: number;
+  width: number;
+  height: number;
   className?: string;
   posterSize?: POSTER_SIZES;
 }
