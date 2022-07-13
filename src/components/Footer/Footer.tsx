@@ -17,7 +17,7 @@ const LOCALES_ICON: { [key: string]: React.ReactElement } = {
 
 export const Footer = () => {
   const { t, i18n: { language }} = useTranslation('common')
-  const { pathname } = useRouter()
+  const { asPath } = useRouter()
 
   const year = new Date().getFullYear()
 
@@ -39,7 +39,7 @@ export const Footer = () => {
         <Styled.Locales>
           <Styled.LocaleInfo>{ t('footer.locale') }</Styled.LocaleInfo>
           {localeKeys.map(locale => (
-            <Link key={locale} href={{ pathname }} locale={locale} passHref>
+            <Link key={locale} href={{ pathname: asPath }} locale={locale} passHref>
               <Styled.LocaleAnchor>{ LOCALES_ICON[locale] }</Styled.LocaleAnchor>
             </Link>
           ))}
