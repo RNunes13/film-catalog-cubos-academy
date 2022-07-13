@@ -1,4 +1,11 @@
 {
   "title": "Catálogo de filmes",
-  "releaseDate": "<strong>Lançamento:</strong> {{date}}"
+  "releaseDate": "<strong>Lançamento:</strong> {{date}}",
+  "search": {
+    "placeholder": "Busque pelo nome ou gênero",
+    "options": {
+      "title": "Título",
+      "genre": "Gênero"
+    }
+  }
 }

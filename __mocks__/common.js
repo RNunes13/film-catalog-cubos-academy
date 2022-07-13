@@ -5,8 +5,8 @@
 jest.mock('next/future/image', () => (props) => {
   const mappedProps = Object
     .entries(props || {})
-    .reduce((obj, [k, v]) => {
-      obj[k] = typeof v === `boolean` ? `${v}` : v
+    .reduce((obj, [k = '', v]) => {
+      obj[k.toLocaleLowerCase()] = typeof v === `boolean` ? `${v}` : v
       return obj
     }, {})
 

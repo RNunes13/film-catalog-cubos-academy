@@ -1,4 +1,11 @@
 {
   "title": "Movie catalog",
-  "releaseDate": "<strong>Release:</strong> {{date}}"
+  "releaseDate": "<strong>Release:</strong> {{date}}",
+  "search": {
+    "placeholder": "Search by name or gender",
+    "options": {
+      "title": "Title",
+      "genre": "Genre"
+    }
+  }
 }

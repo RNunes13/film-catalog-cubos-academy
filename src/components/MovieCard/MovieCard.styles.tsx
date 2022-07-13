@@ -15,6 +15,7 @@ export const Link = styled(NextLink)`
 
 export const Card = styled.a`
   grid-column: 1 / 13;
+  width: 100%;
   display: flex;
   border-radius: ${({ theme }) => theme.spaces.space2};
 

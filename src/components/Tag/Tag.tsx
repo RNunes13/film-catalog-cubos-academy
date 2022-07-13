@@ -8,7 +8,7 @@ export enum COLORS {
 }
 
 export interface ITag {
-  text: string;
+  text?: string;
   color?: COLORS;
   className?: string;
   endAdornment?: JSX.Element;
@@ -19,11 +19,15 @@ export const Tag: React.FC<ITag> = ({
   className,
   endAdornment,
   color = COLORS.primary
-}) => (
-  <Styled.Tag data-testid='tag' color={color} className={className}>
-    { text }
-    { endAdornment }
-  </Styled.Tag>
-)
+}) => {
+  if (!text) return null
+
+  return (
+    <Styled.Tag data-testid='tag' color={color} className={className}>
+      { text }
+      { endAdornment }
+    </Styled.Tag>
+  )
+}
 
 export default Tag

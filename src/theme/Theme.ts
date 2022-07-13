@@ -70,7 +70,7 @@ const theme: IThemeProps = {
 
     base_100: '#000000',
     base_80: '#2c2c2c',
-    base_60: '#858585',
+    base_60: '#828282',
     base_40: '#b3b3b3',
     base_20: '#ebebeb',
     base_10: '#f4f4f4',

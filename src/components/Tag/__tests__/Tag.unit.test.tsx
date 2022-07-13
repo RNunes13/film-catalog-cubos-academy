@@ -10,6 +10,11 @@ const setupComponent = (props?: Partial<ITag>) => render(<Tag {...defaultProps} 
 
 describe('Tag', () => {
   describe('renders as expected', () => {
+    it('should not render the Tag if there is no text', () => {
+      const { container } = setupComponent({ text: undefined })
+      expect(container.querySelector('[data-testid="tag"]')).toBe(null)
+    })
+
     it('renders the `Tag`', () => {
       const { getByTestId } = setupComponent()
       expect(getByTestId('tag')).toBeInTheDocument()

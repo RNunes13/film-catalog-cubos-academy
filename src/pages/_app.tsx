@@ -14,11 +14,15 @@ import Layout from 'components/Layout/Layout'
 
 interface IAppContext {
   genres: Genre[],
+  appliedGenres: number[];
+  appliedSearchTitle: string;
   setGenres?: (genres: any[]) => void
 }
 
 const initState: IAppContext = {
   genres: [],
+  appliedGenres: [],
+  appliedSearchTitle: ''
 }
 
 export const AppCtx = createContext<IAppContext>(initState)

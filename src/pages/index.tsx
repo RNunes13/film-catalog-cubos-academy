@@ -30,7 +30,7 @@ const Home: NextPageWithLayout<IHomeProps> = ({ movieData , localPage }) => {
   const [getGenres, { loading }] = useLazyQuery(GET_GENRES)
 
   const { t } = useTranslation('home')
-  const { setGenres, genres } = useContext(AppCtx)
+  const { setGenres, genres, appliedGenres, appliedSearchTitle } = useContext(AppCtx)
   const { currentPage, results, totalPages, handleLocalPage } = useFilter<IMovie>({ ...movieData, localPage })
 
   const { movies } = new Movies(results, genres)
@@ -48,6 +48,11 @@ const Home: NextPageWithLayout<IHomeProps> = ({ movieData , localPage }) => {
 
   return (
     <Styled.Container>
+      <Styled.Search
+        genres={genres}
+        appliedGenres={appliedGenres}
+        appliedSearchTitle={appliedSearchTitle}
+      />
       <Styled.Movies>
         {movies.map((movie: any) => <MovieCard key={movie.id} movie={movie} />)}
       </Styled.Movies>

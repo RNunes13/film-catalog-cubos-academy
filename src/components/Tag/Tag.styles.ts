@@ -2,6 +2,9 @@ import styled from 'styled-components'
 import { COLORS } from './Tag'
 
 export const Tag = styled.span<{ color?: COLORS }>`
+  display: flex;
+  align-items: center;
+  column-gap: ${({ theme }) => theme.spaces.space1};
   padding: 7px ${({ theme }) => theme.spaces.space3};
   border-radius: 30px;
   font-weight: 600;
