@@ -49,6 +49,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   padding: 50px 50px 30px 50px;
+  width: 100%;
   border-radius: ${({ theme }) => theme.spaces.space2};
   color: ${({ theme }) => theme.colors.base_0};
 
@@ -58,7 +59,7 @@ export const Content = styled.div`
   }
 
   ${mixins.isMobile()} {
-    padding: ${({ theme: { spaces: { space1, space3 }}}) => `${space1} ${space3} ${space3}`};
+    padding: ${({ theme: { spaces: { space2, space3 }}}) => `${space2} ${space3} ${space3}`};
   }
 
   ${mixins.isDesktop()} {

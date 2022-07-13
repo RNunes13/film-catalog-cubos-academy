@@ -1,5 +1,6 @@
 import type { NextPageWithLayout } from '../_app'
-import { GetServerSideProps, GetStaticProps } from 'next'
+import { useState } from 'react'
+import { GetServerSideProps } from 'next'
 
 import { GET_MOVIE } from 'api/queries/Movies'
 import { initializeApollo } from 'apollo/client'
@@ -21,6 +22,7 @@ const client = initializeApollo()
 
 const Movie: NextPageWithLayout<IMovieProps> = ({ movie: movieProps }) => {
   const { t } = useTranslation('movie')
+  const [hasImageError, setImageError] = useState<boolean>(false)
   
   const movie = new MovieEntity(movieProps)
   const information = useMovieInformation(movie)
@@ -79,10 +81,13 @@ const Movie: NextPageWithLayout<IMovieProps> = ({ movie: movieProps }) => {
           </Styled.Genres>
         </Styled.Content>
 
-        <Styled.Poster
-          title={title as string}
-          path={posterPath as string}
-        />
+        {!hasImageError && (
+          <Styled.Poster
+            title={title as string}
+            path={posterPath as string}
+            onImageError={() => setImageError(true)}
+          />
+        )}
       </Styled.ContentWrap>
 
       {!!trailer && (

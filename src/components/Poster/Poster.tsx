@@ -19,6 +19,7 @@ export interface IPoster {
   height: number;
   className?: string;
   posterSize?: POSTER_SIZES;
+  onImageError?(): void;
 }
 
 const PLACEHOLDER = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mN8/R8AAtsB7JKxzdUAAAAASUVORK5CYII='
@@ -29,6 +30,7 @@ export const Poster: React.FC<IPoster> = ({
   width,
   height,
   className,
+  onImageError,
   posterSize = POSTER_SIZES.w500,
 }) => {
   const image = `https://image.tmdb.org/t/p/${posterSize}${path}`
@@ -43,6 +45,7 @@ export const Poster: React.FC<IPoster> = ({
         placeholder='blur'
         blurDataURL={PLACEHOLDER}
         data-testid='poster-image'
+        onError={onImageError}
       />
     </PosterStyled>
  )
