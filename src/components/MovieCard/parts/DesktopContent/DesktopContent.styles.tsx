@@ -53,7 +53,7 @@ export const Overview = styled.p`
   font-size: 18px;
   line-height: 22px;
   overflow: hidden;
-  -webkit-line-clamp: 10;
+  -webkit-line-clamp: 7;
   -webkit-box-orient: vertical;  
   color: ${({ theme }) => theme.colors.base_60};
   margin-bottom: ${({ theme }) => theme.spaces.space2};

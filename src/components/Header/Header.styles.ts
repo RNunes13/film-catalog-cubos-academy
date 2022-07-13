@@ -45,5 +45,6 @@ export const Title = styled.a`
   
   ${mixins.isMobile()} {
     ${mixins.h1()}
+    font-weight: 400;
   }
 `

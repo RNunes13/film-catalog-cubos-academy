@@ -3,5 +3,8 @@
     "title": "Movie"
   },
   "header": "Melhores Filmes",
-  "footer": "Desenvolvido com ❤ por"
+  "footer": {
+    "copyright": "Desenvolvido com ❤ por",
+    "locale": "Ver site em "
+  }
 }

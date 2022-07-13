@@ -125,7 +125,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, params })
 
   const { data: { movie = {} } = {} } = await client.query({
     query: GET_MOVIE,
-    variables: { id },
+    variables: { id, lng: locale },
   })
 
   return {

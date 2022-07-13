@@ -3,5 +3,8 @@
     "title": "Movie"
   },
   "header": "Best movies",
-  "footer": "Developed with ❤ by"
+  "footer": {
+    "copyright": "Developed with ❤ by",
+    "locale": "View site in "
+  }
 }

@@ -180,6 +180,9 @@ export const Poster = styled(PosterComp).attrs({
 `
 
 export const VideoWrap = styled.div`
+`
+
+export const YouTube = styled(YouTubeComp)`
   ${BoxShadow}
   margin-top: ${({ theme }) => theme.spaces.space4};
   border-radius: ${({ theme }) => theme.spaces.space2};
@@ -188,7 +191,4 @@ export const VideoWrap = styled.div`
   ${mixins.medium()} {
     margin-top: ${({ theme }) => theme.spaces.space2};
   }
-`
-
-export const YouTube = styled(YouTubeComp)`
 `
