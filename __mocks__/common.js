@@ -3,10 +3,11 @@
 
 // TODO: Remove this mock when next/future/image feature exits experimental
 jest.mock('next/future/image', () => (props) => {
+  const { blurDataURL, ...rest } = props
   const mappedProps = Object
-    .entries(props || {})
+    .entries(rest || {})
     .reduce((obj, [k = '', v]) => {
-      obj[k.toLocaleLowerCase()] = typeof v === `boolean` ? `${v}` : v
+      obj[k] = typeof v === `boolean` ? `${v}` : v
       return obj
     }, {})
 
@@ -14,3 +15,11 @@ jest.mock('next/future/image', () => (props) => {
     <img alt='' {...mappedProps} />
   )
 })
+
+jest.mock('next/router', () => ({
+  useRouter() {
+    return ({
+      asPath: '',
+    })
+  },
+}))

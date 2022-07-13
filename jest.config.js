@@ -20,8 +20,10 @@ const customJestConfig = {
     '<rootDir>/__mocks__/common.js'
   ],
   moduleNameMapper: {
+    '\\.svg$': '<rootDir>/__mocks__/svg.js',
     "util/(.*)$": "<rootDir>/src/util/$1",
     "theme(.*)$": "<rootDir>/src/theme/$1",
+    "hooks/(.*)$": "<rootDir>/src/hooks/$1",
     "components/(.*)$": "<rootDir>/src/components/$1",
   },
   transformIgnorePatterns: [
@@ -39,6 +41,7 @@ module.exports = async () => {
   // next/jest ignores node_modules and allows to add more ignore patterns, but we need to override them fully to whitelist some node_modules
   // https://github.com/vercel/next.js/blob/canary/packages/next/build/jest/jest.ts
   config.transformIgnorePatterns = customJestConfig.transformIgnorePatterns
+  config.moduleNameMapper = customJestConfig.moduleNameMapper
 
   return config
 }

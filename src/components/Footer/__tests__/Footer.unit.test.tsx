@@ -4,15 +4,9 @@ import { Footer, AUTHOR } from '../Footer'
 
 const setupComponent = () => render(<Footer />)
 
-jest.mock('next-i18next', () => ({
-  useTranslation: () => ({
-    t: (k: string) => k,
-  })
-}))
-
 describe('Footer', () => {
   const year = new Date().getFullYear()
-
+  
   describe('renders as expected', () => {
     it('renders the `Footer`', () => {
       const { getByTestId } = setupComponent()
@@ -23,7 +17,7 @@ describe('Footer', () => {
       const { getByTestId } = setupComponent()
       const container = getByTestId('footer-container')
       expect(container).toBeInTheDocument()
-      expect(container.textContent).toBe(`© ${year} | footer${AUTHOR.name}`)
+      expect(container.textContent).toBe(`© ${year} | footer.copyright${AUTHOR.name}footer.locale`)
     })
 
     it('should render the link correctly', () => {
