@@ -6,6 +6,7 @@ const DEFAULT_LOCALE = 'pt-BR'
 module.exports = {
   locales: LOCALES,
   defaultLocale: DEFAULT_LOCALE,
+  defaultNS: 'common',
   i18n: {
     locales: LOCALES,
     defaultLocale: DEFAULT_LOCALE,

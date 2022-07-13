@@ -26,7 +26,7 @@ export const Footer = () => {
   return (
     <Styled.Footer data-testid='footer'>
       <Styled.Container data-testid='footer-container'>
-        <Styled.Copyright>
+        <Styled.Copyright data-testid='footer-copyright'>
           {`© ${year} | ${t('footer.copyright')}`}
 
           <Link href={AUTHOR.link} passHref>
@@ -36,7 +36,7 @@ export const Footer = () => {
           </Link>
         </Styled.Copyright>
 
-        <Styled.Locales>
+        <Styled.Locales data-testid='footer-locales'>
           <Styled.LocaleInfo>{ t('footer.locale') }</Styled.LocaleInfo>
           {localeKeys.map(locale => (
             <Link key={locale} href={{ pathname: asPath }} locale={locale} passHref>
