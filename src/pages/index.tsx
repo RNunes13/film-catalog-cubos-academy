@@ -1,5 +1,4 @@
 import type { NextPageWithLayout } from './_app'
-import Head from 'next/head'
 import { GetServerSideProps } from 'next'
 import { useCallback, useEffect, useContext } from 'react'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
@@ -16,7 +15,7 @@ import { useFilter, LOCAL_PAGE_KEY, API_PAGES_LIMIT } from 'hooks/useFilter'
 
 import { MovieCard } from 'components/MovieCard/MovieCard'
 import * as Styled from 'styles/Home.styles'
-import { SEO } from 'src/components/Seo/Seo'
+import { SEO } from 'components/Seo/Seo'
 
 export interface IHomeProps {
   locale: string;

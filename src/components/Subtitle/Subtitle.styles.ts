@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { mixins } from 'src/theme'
+import { mixins } from 'theme'
 
 export const Subtitle = styled.h3`
   margin-bottom: ${({ theme }) => theme.spaces.space1};

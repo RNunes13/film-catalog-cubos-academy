@@ -1,5 +1,5 @@
 import React from 'react'
-import { DOTS } from 'src/hooks/usePagination'
+import { DOTS } from 'hooks/usePagination'
 
 import * as Styled from './Item.styles'
 

@@ -1,5 +1,5 @@
 import { render, fireEvent } from 'util/test-utils'
-import { DOTS } from 'src/hooks/usePagination';
+import { DOTS } from 'hooks/usePagination';
 
 import { Item, IItem } from '../Item'
 

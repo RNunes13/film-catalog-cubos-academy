@@ -1,4 +1,4 @@
-import { mixins } from 'src/theme'
+import { mixins } from 'theme'
 import styled from 'styled-components'
 
 export const Dots = styled.li`

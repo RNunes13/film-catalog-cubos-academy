@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react'
-import { Genre } from 'src/entities/Genres/Genres';
+import { Genre } from 'entities/Genres/Genres';
 
 import * as Styled from './Tags.styles'
 

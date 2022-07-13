@@ -11,7 +11,8 @@ import { useMovieInformation } from 'hooks/useMovieInformation'
 import { Movie as MovieEntity, IMovie } from 'entities/Movie/Movie'
 
 import Layout from 'components/Layout/Layout'
-import { COLORS } from 'src/theme/Theme'
+import { SEO } from 'components/Seo/Seo'
+import { COLORS } from 'theme/Theme'
 import * as Styled from 'styles/Movie.styles'
 
 export interface IMovieProps {
@@ -105,11 +106,19 @@ const Movie: NextPageWithLayout<IMovieProps> = ({ movie: movieProps }) => {
   )
 }
 
-Movie.getLayout = (page) => (
-  <Layout grid='grid1290'>
-    { page }
-  </Layout>
-)
+Movie.getLayout = (page) => {
+  const { movie = {} } = page?.props || {}
+
+  return (
+    <Layout grid='grid1290'>
+      <SEO
+        title={movie.title}
+        description={movie.overview}
+      />
+      { page }
+    </Layout>
+  )
+}
 
 export const getServerSideProps: GetServerSideProps = async ({ locale, params }) => {
   const { id } = params || {}

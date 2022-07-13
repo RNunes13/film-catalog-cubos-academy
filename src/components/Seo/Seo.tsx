@@ -17,7 +17,7 @@ export const SEO: React.FC<ISeo> = ({ description, title, siteTitle, image = 'lo
 
   return (
     <Head>
-      <title>{title ?? mainTitle}</title>
+      <title>{mainTitle && title ? `${mainTitle} | ${title}` : (title ?? mainTitle)}</title>
       <meta name="description" key="description" content={description} />
       <meta property="og:type" key="og:type" content="website" />
       <meta property="og:title" key="og:title" content={title ?? mainTitle} />

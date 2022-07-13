@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { mixins } from 'src/theme'
+import { mixins } from 'theme'
 
 import MovieCardComp from 'components/MovieCard/MovieCard'
 import PaginationComp from 'components/Pagination/Pagination'
-import SearchComp from 'src/components/SearchForm/Search'
+import SearchComp from 'components/SearchForm/Search'
 
 export const Container = styled.div`
 `
