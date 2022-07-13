@@ -17,6 +17,7 @@ export interface IPoster {
   path: string;
   width: number;
   height: number;
+  priority?: boolean;
   className?: string;
   posterSize?: POSTER_SIZES;
   onImageError?(): void;
@@ -29,9 +30,10 @@ export const Poster: React.FC<IPoster> = ({
   path,
   width,
   height,
+  priority,
   className,
-  onImageError,
   posterSize = POSTER_SIZES.w500,
+  onImageError,
 }) => {
   const image = `https://image.tmdb.org/t/p/${posterSize}${path}`
 
@@ -43,6 +45,7 @@ export const Poster: React.FC<IPoster> = ({
         width={width}
         height={height}
         placeholder='blur'
+        priority={priority}
         blurDataURL={PLACEHOLDER}
         data-testid='poster-image'
         onError={onImageError}

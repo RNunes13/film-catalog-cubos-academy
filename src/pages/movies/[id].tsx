@@ -84,6 +84,7 @@ const Movie: NextPageWithLayout<IMovieProps> = ({ movie: movieProps }) => {
 
         {!hasImageError && (
           <Styled.Poster
+            priority={true}
             title={title as string}
             path={posterPath as string}
             onImageError={() => setImageError(true)}

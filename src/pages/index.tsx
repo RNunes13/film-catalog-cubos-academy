@@ -60,7 +60,13 @@ const Home: NextPageWithLayout<IHomeProps> = ({ movieData , localPage }) => {
           appliedSearchTitle={appliedSearchTitle}
         />
         <Styled.Movies>
-          {movies.map((movie: any) => <MovieCard key={movie.id} movie={movie} />)}
+          {movies.map((movie: any, idx) => (
+            <MovieCard
+              movie={movie}
+              key={movie.id}
+              prioritizeImage={idx === 0}
+            />
+          ))}
         </Styled.Movies>
         <Styled.Pagination
           totalPages={totalPages}

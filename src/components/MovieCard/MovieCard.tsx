@@ -7,9 +7,10 @@ import * as Styled from './MovieCard.styles'
 
 export interface IMovieCard {
   movie: Movie;
+  prioritizeImage?: boolean;
 }
 
-export const MovieCard: React.FC<IMovieCard> = ({ movie }) => {
+export const MovieCard: React.FC<IMovieCard> = ({ movie, prioritizeImage }) => {
   const { id, title, posterPath } = movie
 
   return (
@@ -20,6 +21,7 @@ export const MovieCard: React.FC<IMovieCard> = ({ movie }) => {
           path={posterPath as string}
           width={Styled.IMAGE_WIDTH}
           height={Styled.IMAGE_HEIGHT}
+          priority={prioritizeImage}
         />
         <Styled.DesktopContent movie={movie} />
         <Styled.MobileContent movie={movie} />
