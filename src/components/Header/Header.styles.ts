@@ -36,12 +36,12 @@ export const Container = styled.div`
 `
 
 export const Title = styled.h1`
-  ${mixins.h1()}
+  ${mixins.h0()}
   color: ${({ theme }) => theme.colors.base_0};
+  font-weight: 400;
   text-align: center;
   
   ${mixins.isMobile()} {
-    ${mixins.h2()}
+    ${mixins.h1()}
   }
 `
-

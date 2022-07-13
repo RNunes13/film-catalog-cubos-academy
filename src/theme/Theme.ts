@@ -96,7 +96,7 @@ const theme: IThemeProps = {
     xlarge: '1350px',
   },
   fonts: {
-    secondaryFontFamily: 'Roboto',
+    secondaryFontFamily: '"Sirin Stencil", cursive;',
     baseFontFamily:
       '"Roboto", BlinkMacSystemFont, -apple-system, sans-serif',
   },
