@@ -1,5 +1,8 @@
 {
-  "title": "Catálogo de filmes",
+  "meta": {
+    "title": "Catálogo de filmes",
+    "description": "Seu maior catálogo de filmes"
+  },
   "releaseDate": "<strong>Lançamento:</strong> {{date}}",
   "search": {
     "placeholder": "Busque pelo nome ou gênero",

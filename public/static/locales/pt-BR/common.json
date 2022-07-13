@@ -1,4 +1,7 @@
 {
+  "meta": {
+    "title": "Catálogo de filmes"
+  },
   "header": "Melhores Filmes",
   "footer": "Desenvolvido com ❤ por"
 }

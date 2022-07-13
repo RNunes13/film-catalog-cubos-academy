@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "Movie catalog",
+    "description": "Seu maior catálogo de filmes"
+  },
   "header": "Best movies",
   "footer": "Developed with ❤ by"
 }
