@@ -31,8 +31,8 @@ export const Circle = styled.circle<{
 
   &:nth-child(2) {
     stroke: ${({ theme, color }) => theme.colors[color as COLORS]};
-    stroke-dasharray: 125;
-    stroke-dashoffset: ${({ value }) => `calc(125 - (125 * ${value}) / 100)`};
+    stroke-dasharray: 125px;
+    stroke-dashoffset: ${({ value }) => `calc(125px - (125px * ${value}) / 100)`};
   }
 `
 
