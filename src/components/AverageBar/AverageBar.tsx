@@ -21,22 +21,7 @@ export const AverageBar: React.FC<IAverageBar> = ({
   return (
     <Styled.AverageBar className={className} data-testid='averageBar'>
       <Styled.Wrapper>
-        <Styled.Svg>
-          <Styled.Circle
-            r={r}
-            cx={cx}
-            cy={cy}
-            data-testid='averageBar-circle1'
-          />
-          <Styled.Circle
-            r={r}
-            cx={cx}
-            cy={cy}
-            color={color}
-            value={percent}
-            data-testid='averageBar-circle2'
-          />
-        </Styled.Svg>
+        <Styled.CircularBar color={color} value={percent} />
         <Styled.Percent data-testid='averageBar-percent'>
           <Styled.Number data-testid='averageBar-number'>
             { percent }
