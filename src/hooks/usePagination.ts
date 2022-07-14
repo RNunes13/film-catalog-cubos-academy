@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 
-interface IPagination {
+export interface IPagination {
   totalPages: number
   currentPage: number
   siblingCount?: number
