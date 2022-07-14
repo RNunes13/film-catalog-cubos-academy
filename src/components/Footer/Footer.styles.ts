@@ -25,6 +25,10 @@ export const Container = styled.div`
 `
 
 export const Copyright = styled.p`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5px;
 `
 
 export const DevelopedBy = styled.a`
