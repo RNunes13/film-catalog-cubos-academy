@@ -63,7 +63,7 @@ To compile the files and watch the changes in **Development** environment, and t
 npm run dev
 ```
 
-On **Linux** or **MAC** systems, at times, you'll need to use **sudo** to execute this command. So, just added before the command (```sudo npm run start```).
+On **Linux** or **MAC** systems, at times, you'll need to use **sudo** to execute this command. So, just added before the command (```sudo npm run dev```).
 
 Navigate to `http://localhost:3000/`. The app will automatically reload if you change any of the source files.
 
@@ -75,9 +75,7 @@ To compile the files in **Production** environment, run the command below.
 npm run start:prod
 ```
 
-On **Linux** or **MAC** systems, at times, you'll need to use **sudo** to execute this command. So, just added before the command (```sudo npm run build```).
-
-The build artifacts will be stored in the `dist/` directory. This script (```npm run build```) already has the `--prod` flag.
+On **Linux** or **MAC** systems, at times, you'll need to use **sudo** to execute this command. So, just added before the command (```sudo npm run start:prod```).
 
 ## Authors
   * **Rodrigo Nunes** - Initial work - [RNunes](https://github.com/RNunes13)
