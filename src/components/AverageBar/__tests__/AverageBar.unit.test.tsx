@@ -18,28 +18,12 @@ describe('AverageBar', () => {
       expect(getByTestId('averageBar')).toBeInTheDocument()
     })
 
-    it('should render the first circle', () => {
-      const { getByTestId } = setupComponent()
-      const circleSize = '20'
-      const circle = getByTestId('averageBar-circle1')
-      expect(circle).toBeInTheDocument()
-      expect(circle.getAttribute('r')).toBe(circleSize)
-      expect(circle.getAttribute('cx')).toBe(circleSize)
-      expect(circle.getAttribute('cy')).toBe(circleSize)
-    })
-
-    it('should render the second circle', () => {
-      const props: IAverageBar = { value: 5.5, color: COLORS.secondary }
+    it('renders the `CircularBar`', () => {
+      const props: IAverageBar = { color: COLORS.secondary, value: 6.8 }
       const { getByTestId } = setupComponent(props)
-
-      const circleSize = '20'
-      const circle = getByTestId('averageBar-circle2')
-
+      const circle = getByTestId('averageBar-circular')
       expect(circle).toBeInTheDocument()
-      expect(circle.getAttribute('r')).toBe(circleSize)
-      expect(circle.getAttribute('cx')).toBe(circleSize)
-      expect(circle.getAttribute('cy')).toBe(circleSize)
-      expect(circle.getAttribute('color')).toBe(COLORS.secondary)
+      expect(circle.getAttribute('color')).toBe(props.color)
       expect(circle.getAttribute('value')).toBe(`${props.value * 10}`)
     })
 

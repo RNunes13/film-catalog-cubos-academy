@@ -2,9 +2,6 @@ enum COLORS {
   primary = 'primary',
   secondary = 'secondary',
 
-  redOrange = 'redOrange',
-  pacificBlue = 'pacificBlue',
-
   /** Base */
   base_100 = 'base_100',
   base_80 = 'base_80',
